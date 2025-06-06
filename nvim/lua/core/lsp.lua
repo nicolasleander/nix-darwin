@@ -35,31 +35,7 @@ vim.lsp.config.lua_ls = {
 }
 vim.lsp.enable 'lua_ls'
 vim.lsp.enable 'ts_ls'
-
-local corelib_path = os.getenv 'CAIRO_CORELIB_PATH'
-vim.lsp.config.cairo_ls = {
-  -- cmd = { vim.fn.expand '$HOME/.local/bin/scarb', 'cairo-language-server', '/C', '--node-ipc' },
-  cmd = { 'scarb-cairo-language-server', '/C', '--node-ipc' },
-  cmd_env = {
-    SCARB_CONFIG = vim.fn.expand '$HOME/.scarb/config',
-    SCARB_CACHE = vim.fn.expand '$HOME/.scarb/cache',
-    CARGO_HOME = vim.fn.expand '$HOME/.cargo',
-    TMPDIR = vim.fn.expand '$HOME/.tmp',
-    PATH = vim.fn.expand '$HOME/.local/bin' .. ':' .. vim.env.PATH,
-  },
-  on_init = function()
-    vim.fn.mkdir(vim.fn.expand '$HOME/.tmp', 'p')
-    vim.fn.mkdir(vim.fn.expand '$HOME/.scarb/config', 'p')
-    vim.fn.mkdir(vim.fn.expand '$HOME/.scarb/cache', 'p')
-    vim.fn.mkdir(vim.fn.expand '$HOME/.cargo', 'p')
-  end,
-  settings = {
-    cairo1 = {
-      corelibPath = corelib_path,
-    },
-  },
-}
-vim.lsp.enable 'cairo_ls'
+vim.lsp.enable 'gopls'
 
 local nixpkgs_expr = string.format('import (builtins.getFlake "%s").inputs.nixpkgs { }', vim.fn.getcwd())
 vim.lsp.config.nixd = {
