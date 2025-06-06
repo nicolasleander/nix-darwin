@@ -132,11 +132,11 @@ in
       };
       # yeah signing is not cool since my ssh
       # keys are living inside macbook secure enclave hsm
-      signing = {
-        key = "77770117E85F0F79";
-        signByDefault = true;
-        format = "openpgp";
-      };
+      # signing = {
+      #   key = "77770117E85F0F79";
+      #   signByDefault = true;
+      #   format = "openpgp";
+      # };
 
       extraConfig = {
         core = {
