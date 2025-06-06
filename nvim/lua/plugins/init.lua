@@ -54,7 +54,6 @@ return {
   -- NOTE: TBH I use claude code & desktop
   -- this is just a backup
   require 'plugins.avante',
-  require 'plugins.mcphub',
 
   -- Development
   require 'plugins.lazydev',

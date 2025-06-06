@@ -19,19 +19,10 @@ let
             "Europe/Lisbon"
           ];
         };
-        tavily = {
-          enable = true;
-          passwordCommand = {
-            TAVILY_API_KEY = [
-              "cat"
-              "/run/secrets/tavily-key"
-            ];
-          };
-        };
         qdrant = {
           enable = true;
           env = {
-            QDRANT_LOCAL_PATH = "/Users/vaporif/qdrant";
+            QDRANT_LOCAL_PATH = "/Users/myk/qdrant";
             COLLECTION_NAME = "mcp-server-collection";
           };
         };
@@ -53,8 +44,6 @@ let
 in
 {
   home.file = {
-    "${config.xdg.configHome}/mcphub/servers.json".source = mcpServersConfig;
-  } // lib.optionalAttrs pkgs.stdenv.isDarwin {
     "Library/Application\ Support/Claude/claude_desktop_config.json".source = mcpServersConfig;
   };
 }

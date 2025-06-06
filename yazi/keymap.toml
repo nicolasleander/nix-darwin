@@ -3,9 +3,9 @@ on = [ "<Enter>" ]
 run = '''shell 'nvim "$1"' --block'''
 
 [[mgr.prepend_keymap]]
-on = [ "b", "r" ]
-run = "cd ~/Repos/"
-desc = "Go to Repos"
+on = [ "b", "w" ]
+run = "cd ~/dev/adler.games"
+desc = "Go to adler"
 
 [[mgr.prepend_keymap]]
 on = [ "b", "m" ]
@@ -13,9 +13,9 @@ run = "cd /etc/nix-darwin/"
 desc = "Go to nix-darwin"
 
 [[mgr.prepend_keymap]]
-on = [ "b", "w" ]
-run = "cd ~/Repos/giza-axelar-starknet/"
-desc = "Go to axelar<>starknet"
+on = [ "b", "d" ]
+run = "cd ~/dev"
+desc = "Go to dev"
 
 
 [[mgr.prepend_keymap]]

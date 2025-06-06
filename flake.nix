@@ -10,12 +10,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     sops-nix.url = "github:Mic92/sops-nix";
-    mcp-hub.url = "github:ravitemer/mcp-hub";
-    mcp-nixos.url = "github:utensils/mcp-nixos";
-    mcp-servers-nix = {
-      url = "github:vaporif/mcp-servers-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     fzf-git-sh = {
       url = "https://raw.githubusercontent.com/junegunn/fzf-git.sh/28b544a7b6d284b8e46e227b36000089b45e9e00/fzf-git.sh";
       flake = false;
@@ -26,22 +20,19 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, nix-darwin, mcp-hub, mcp-nixos, home-manager, sops-nix, fzf-git-sh, yamb-yazi,  mcp-servers-nix, ... }:
+  outputs = inputs@{ nixpkgs, nix-darwin, home-manager, sops-nix, fzf-git-sh, yamb-yazi, ... }:
     let
       system = "aarch64-darwin";
 
-      mcp-hub-package = mcp-hub.packages.${system}.default;
-      mcp-nixos-package = mcp-nixos.packages.${system}.default;
       pkgs = nixpkgs.legacyPackages.${system};
       fzf-git-sh-package = pkgs.writeShellScriptBin "fzf-git.sh" (builtins.readFile fzf-git-sh);
     in
     {
-      darwinConfigurations."MacBook-Pro" = nix-darwin.lib.darwinSystem {
+      darwinConfigurations."Apple-M2-Max-2023" = nix-darwin.lib.darwinSystem {
         inherit system;
         modules = [
           {
             nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
-              "spacetimedb"
               "claude-code"
             ];
           }
@@ -49,18 +40,17 @@
           ./system.nix
           home-manager.darwinModules.home-manager
           {
-            users.users.vaporif = {
-              name = "vaporif";
-              home = "/Users/vaporif";
+            users.users.myk = {
+              name = "myk";
+              home = "/Users/myk";
             };
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
               extraSpecialArgs = {
                 inherit fzf-git-sh-package yamb-yazi;
-                inherit mcp-servers-nix mcp-hub-package mcp-nixos-package ;
               };
-              users.vaporif = import ./home.nix;
+              users.myk = import ./home.nix;
             };
           }
         ];

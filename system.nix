@@ -10,42 +10,16 @@
   # Address the Determinate error
   nix.enable = false;
 
-  sops.defaultSopsFile = ./secrets/secrets.yaml;
-  sops.age.keyFile = "/Users/vaporif/.config/sops/age/key.txt";
-  sops.secrets.openrouter-key = {
-    owner = "vaporif";
-    group = "staff";
-    mode = "0400";
-  };
-
-  sops.secrets.tavily-key = {
-    owner = "vaporif";
-    group = "staff";
-    mode = "0400";
-  };
-
-  sops.secrets.youtube-key = {
-    owner = "vaporif";
-    group = "staff";
-    mode = "0400";
-  };
-
   nix.settings.experimental-features = "nix-command flakes";
   system.configurationRevision = null;
   system.stateVersion = 6;
-  system.primaryUser = "vaporif";
+  system.primaryUser = "myk";
   system.defaults = {
-    dock = {
-      autohide = true;
-      mru-spaces = false;
-      wvous-br-corner = 1;
-    };
     finder = {
       AppleShowAllExtensions = true;
       FXPreferredViewStyle = "clmv";
       AppleShowAllFiles = true;
     };
-    screencapture.location = "~/screenshots";
     screensaver.askForPasswordDelay = 10;
   };
   system.defaults.dock.autohide-delay = 0.2;
@@ -54,7 +28,7 @@
     skhd = {
       enable = true;
       skhdConfig = ''
-        cmd - 1 : open -a "Librewolf"
+        cmd - 1 : open -a "Safari"
         cmd - 2 : open -a "kitty"
         cmd - 3 : open -a "Claude"
         cmd - 4 : open -a "Telegram"
@@ -63,7 +37,6 @@
         cmd - 7 : open -a "Brave Browser"
         cmd - 8 : open -a "Signal"
         cmd - 9 : open -a "Spotify"
-        cmd - 0 : open -a "Librewolf" "https://anitube.in.ua/3734-uma-musume-pretty-derby-tv-season-2.html"
       '';
     };
   };
@@ -93,7 +66,7 @@
   system.defaults.loginwindow = {
     GuestEnabled = false;
     LoginwindowText = "derp durp";
-    autoLoginUser = "vaporif";
+    autoLoginUser = "myk";
   };
   system.defaults.menuExtraClock = {
     Show24Hour = true;
@@ -116,7 +89,6 @@
 
     brews = [
       "podman"
-      "ollama"
     ];
 
     casks = [

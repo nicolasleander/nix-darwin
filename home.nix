@@ -1,4 +1,4 @@
-{ pkgs, lib, mcp-hub-package, mcp-nixos-package, fzf-git-sh-package, yamb-yazi, ... }:
+{ pkgs, lib, mcp-hub-package, fzf-git-sh-package, yamb-yazi, ... }:
 
 let
   kittyEverforestDarkHard = pkgs.fetchurl {
@@ -12,13 +12,10 @@ let
   };
 in
 {
-  imports = [
-    ./mcp-servers.nix
-  ];
 
   home = {
-    homeDirectory = "/Users/vaporif";
-    username = "vaporif";
+    homeDirectory = "/Users/myk";
+    username = "myk";
     stateVersion = "24.05";
   };
   home.packages = with pkgs; [
@@ -32,7 +29,9 @@ in
     pngpaste
     viu
     chafa
-    texlive.combined.scheme-full
+    go
+    delve
+    pinentry_mac
     basedpyright
     ghostscript
     wget
@@ -47,11 +46,8 @@ in
     bun
     uv
     ruff
-    spacetimedb
     glances
     claude-code
-    mcp-hub-package
-    mcp-nixos-package
     qdrant
     qdrant-web-ui
   ];
@@ -121,16 +117,13 @@ in
         ulimit -Sn 4096
         ulimit -Sl unlimited
         source ${fzf-git-sh-package}/bin/fzf-git.sh
-        export OPENROUTER_API_KEY="$(cat /run/secrets/openrouter-key)"
-        export TAVILY_API_KEY="$(cat /run/secrets/tavily-key)"
-        export PATH="/opt/homebrew/bin:$PATH"
       '';
     };
 
     git = {
       enable = true;
-      userName = "Dmytro Onypko";
-      userEmail = "vaporif@proton.me";
+      userName = "Nicolas Bugaer";
+      userEmail = "nicolas@bugaer.com";
       aliases = {
         co = "checkout";
         cob = "checkout -b";
@@ -140,7 +133,7 @@ in
       # yeah signing is not cool since my ssh
       # keys are living inside macbook secure enclave hsm
       signing = {
-        key = "AC03496CA69745FE";
+        key = "77770117E85F0F79";
         signByDefault = true;
         format = "openpgp";
       };
@@ -199,18 +192,6 @@ in
     zellij = {
       enable = true;
       enableZshIntegration = true;
-    };
-  };
-
-  home.file = {
-    ".envrc".text = ''
-        use flake github:vaporif/nix-devshells/23ff6af6c6e5bd542a2c52246dbade2fec96ff63
-    '';
-   ".ssh/config" = {
-      source = ./.ssh/config;
-      onChange = ''
-        chmod 600 ~/.ssh/config
-      '';
     };
   };
 
