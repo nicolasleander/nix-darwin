@@ -20,6 +20,7 @@ in
   };
   home.packages = with pkgs; [
     nerd-fonts.hack
+    gopls
     yt-dlp
     mermaid-cli
     tectonic
@@ -43,6 +44,7 @@ in
     gnupg
     python312Full
     nodejs_22
+    pnpm
     bun
     uv
     ruff

@@ -57,7 +57,6 @@ return {
 
   -- Development
   require 'plugins.lazydev',
-  require 'plugins.lazygit',
 
   -- Misc
   'LunarVim/bigfile.nvim',

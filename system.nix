@@ -65,7 +65,7 @@
 
   system.defaults.loginwindow = {
     GuestEnabled = false;
-    LoginwindowText = "derp durp";
+    LoginwindowText = "brown kolya";
     autoLoginUser = "myk";
   };
   system.defaults.menuExtraClock = {
