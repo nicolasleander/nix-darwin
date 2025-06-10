@@ -28,7 +28,7 @@
     skhd = {
       enable = true;
       skhdConfig = ''
-        cmd - 1 : open -a "Chrome"
+        cmd - 1 : open -a "Google Chrome"
         cmd - 2 : open -a "kitty"
         cmd - 3 : open -a "Claude"
         cmd - 4 : open -a "Safari"
