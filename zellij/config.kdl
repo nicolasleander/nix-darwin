@@ -151,12 +151,12 @@ show_startup_tips false
 pane_frames false
 keybinds {
     normal clear-defaults=true {
-        bind "Ctrl k" { SwitchToMode "Tmux"; }
+        bind "Ctrl n" { SwitchToMode "Tmux"; }
         unbind "Ctrl b"
     }
     tmux clear-defaults=true {
         bind "Esc" { SwitchToMode "Normal"; }
-        bind "Ctrl k" { Write 2; SwitchToMode "Normal"; }
+        bind "Ctrl n" { Write 2; SwitchToMode "Normal"; }
         bind "p" { SwitchToMode "Pane"; }
         bind "t" { SwitchToMode "Tab"; }
         bind "r" { SwitchToMode "Resize"; }
@@ -170,10 +170,10 @@ keybinds {
         bind "Down" { NewPane "Down"; SwitchToMode "Normal"; }
         bind "Right" { NewPane "Right"; SwitchToMode "Normal"; }
         bind "f" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
-        bind "n" { MoveFocus "Left"; SwitchToMode "Normal"; }
-        bind "i" { MoveFocus "Right"; SwitchToMode "Normal"; }
-        bind "u" { MoveFocus "Up"; SwitchToMode "Normal"; }
-        bind "e" { MoveFocus "Down"; SwitchToMode "Normal"; }
+        bind "j" { MoveFocus "Left"; SwitchToMode "Normal"; }
+        bind "l" { MoveFocus "Right"; SwitchToMode "Normal"; }
+        bind "i" { MoveFocus "Up"; SwitchToMode "Normal"; }
+        bind "k" { MoveFocus "Down"; SwitchToMode "Normal"; }
         bind "/" { SwitchToMode "EnterSearch"; SearchInput 0;}
 
         bind "1" { GoToTab 1; SwitchToMode "Normal"; }

@@ -28,10 +28,10 @@
     skhd = {
       enable = true;
       skhdConfig = ''
-        cmd - 1 : open -a "Safari"
+        cmd - 1 : open -a "Chrome"
         cmd - 2 : open -a "kitty"
         cmd - 3 : open -a "Claude"
-        cmd - 4 : open -a "Telegram"
+        cmd - 4 : open -a "Safari"
         cmd - 5 : open -a "Slack"
         cmd - 6 : open -a "Activity Monitor"
         cmd - 7 : open -a "Brave Browser"
