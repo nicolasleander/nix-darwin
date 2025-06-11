@@ -94,6 +94,11 @@ in
       stdlib = builtins.readFile ./direnvrc;
     };
 
+    starship = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
     zsh = {
       enable = true;
       enableCompletion = true;
@@ -109,11 +114,6 @@ in
         ls = "eza -a";
         cat = "bat";
         e = "nvim";
-      };
-      oh-my-zsh = {
-        enable = true;
-        plugins = [ "git" "rust" ];
-        theme = "robbyrussell";
       };
       initContent = ''
         ulimit -Sn 4096
