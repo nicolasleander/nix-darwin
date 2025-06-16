@@ -32,6 +32,8 @@ in
     chafa
     go
     delve
+    cloc
+    cargo
     pinentry_mac
     basedpyright
     ghostscript
