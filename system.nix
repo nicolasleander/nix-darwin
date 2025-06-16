@@ -95,6 +95,7 @@
       "element"
       "librewolf"
       "freetube"
+      "orbstack"
       "claude"
       "simplex"
       "brave-browser"
