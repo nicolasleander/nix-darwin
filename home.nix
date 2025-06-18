@@ -45,9 +45,6 @@ in
     pango
     gnupg
     python312Full
-    nodejs_22
-    pnpm
-    bun
     uv
     ruff
     glances
@@ -116,11 +113,15 @@ in
         ls = "eza -a";
         cat = "bat";
         e = "nvim";
+        ".." = "cd ..";
       };
       initContent = ''
         ulimit -Sn 4096
         ulimit -Sl unlimited
         source ${fzf-git-sh-package}/bin/fzf-git.sh
+        
+        # Add Homebrew to PATH
+        export PATH="/opt/homebrew/bin:$PATH"
 
         # Generate zellij config if it doesn't exist or update theme based on system appearanceAdd commentMore actions
         ZELLIJ_CONFIG_DIR="$HOME/.config/zellij"

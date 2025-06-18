@@ -88,6 +88,8 @@
     ];
 
     brews = [
+      "nodejs"
+      "bun"
       "podman"
     ];
 
