@@ -48,7 +48,6 @@ in
     uv
     ruff
     glances
-    claude-code
     qdrant
     qdrant-web-ui
   ];
@@ -109,7 +108,6 @@ in
         ghl = "gh pr list";
         t = "yy";
         lg = "lazygit";
-        ai = "claude code";
         ls = "eza -a";
         cat = "bat";
         e = "nvim";

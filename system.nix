@@ -98,7 +98,6 @@
       "librewolf"
       "freetube"
       "orbstack"
-      "claude"
       "simplex"
       "brave-browser"
       "kitty"

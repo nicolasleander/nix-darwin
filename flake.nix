@@ -32,9 +32,6 @@
         inherit system;
         modules = [
           {
-            nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
-              "claude-code"
-            ];
           }
           sops-nix.darwinModules.sops
           ./system.nix
