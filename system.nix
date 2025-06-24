@@ -28,15 +28,10 @@
     skhd = {
       enable = true;
       skhdConfig = ''
-        cmd - 1 : open -a "Google Chrome"
-        cmd - 2 : open -a "kitty"
-        cmd - 3 : open -a "Claude"
-        cmd - 4 : open -a "Safari"
-        cmd - 5 : open -a "Slack"
-        cmd - 6 : open -a "Activity Monitor"
-        cmd - 7 : open -a "Brave Browser"
-        cmd - 8 : open -a "Signal"
+        cmd - 1 : open -a "kitty"
+        cmd - 2 : open -a "Brave Browser"
         cmd - 9 : open -a "Spotify"
+        cmd - 0 : open -a "Activity Monitor"
       '';
     };
   };
@@ -65,7 +60,7 @@
 
   system.defaults.loginwindow = {
     GuestEnabled = false;
-    LoginwindowText = "brown kolya";
+    LoginwindowText = "hey";
     autoLoginUser = "myk";
   };
   system.defaults.menuExtraClock = {

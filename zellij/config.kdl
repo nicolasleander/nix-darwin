@@ -163,7 +163,7 @@ keybinds {
         bind "m" { SwitchToMode "Move"; }
         bind "s" { SwitchToMode "Scroll"; }
         bind "o" { SwitchToMode "Session"; }
-        bind "b" { NewTab; SwitchToMode "Normal"; }
+        bind "c" { NewTab; SwitchToMode "Normal"; }
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
         bind "Up" { NewPane "Up"; SwitchToMode "Normal"; }
         bind "Left" { NewPane "Left"; SwitchToMode "Normal"; }

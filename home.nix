@@ -33,7 +33,7 @@ in
     go
     delve
     cloc
-    cargo
+    rustup
     pinentry_mac
     basedpyright
     ghostscript
@@ -117,7 +117,7 @@ in
         ulimit -Sn 4096
         ulimit -Sl unlimited
         source ${fzf-git-sh-package}/bin/fzf-git.sh
-        
+
         # Add Homebrew to PATH
         export PATH="/opt/homebrew/bin:$PATH"
 
